@@ -61,7 +61,7 @@ const Country = () => {
               {country.name}
             </Box>
             <Image
-              w="65px"
+              w="45px"
               h="45px"
               border="1px"
               borderColor="gray.200"
