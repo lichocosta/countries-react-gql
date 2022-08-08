@@ -9,7 +9,6 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { flagToCountry } from "emoji-flags-to-country";
-import "./Country.css";
 
 const Country = () => {
   const { data, error, loading } = useQuery(GET_COUNTRIES);
@@ -23,7 +22,9 @@ const Country = () => {
   if (loading)
     return (
       <Center h="70vh">
-        <strong>Loading... </strong>
+        <Box pr={4} fontSize="lg" fontWeight="bold" as="h3">
+          Loading...
+        </Box>
         <Spinner size="lg" />
       </Center>
     );
@@ -32,10 +33,10 @@ const Country = () => {
 
   return (
     <>
-      <Box pt={4} pl={4} fontSize='3xl' fontWeight="bold" as="h1">
-        Countries with GraphQL
+      <Box pt={4} pl={4} mb={4} fontSize="2xl" fontWeight="bold" as="h1">
+        Countries list with ReactJS | GraphQL | ChakraUI
       </Box>
-      <SimpleGrid minChildWidth='250px' p={6} spacing="40px">
+      <SimpleGrid minChildWidth="250px" p={4} spacing="40px">
         {data.countries.map((country) => (
           <Flex
             key={country.name}
@@ -52,7 +53,7 @@ const Country = () => {
           >
             <Box
               fontWeight="semibold"
-              fontSize='md'
+              fontSize="md"
               as="h4"
               lineHeight="tight"
               noOfLines={1}
@@ -60,6 +61,8 @@ const Country = () => {
               {country.name}
             </Box>
             <Image
+              w="65px"
+              h="45px"
               border="1px"
               borderColor="gray.200"
               m="auto"
@@ -67,10 +70,10 @@ const Country = () => {
               alt={`${country.emoji}`}
             />
             <Box textAlign="left">
-              <Box as="h6" fontWeight="semibold" color="gray.600" fontSize="sm">
+              <Box as="h6" fontWeight="semibold" fontSize="sm">
                 Capital: {country.capital}
               </Box>
-              <Box as="h6" fontWeight="semibold" color="gray.600" fontSize="sm">
+              <Box as="h6" fontWeight="semibold" fontSize="sm">
                 Currency: {country.currency}
               </Box>
             </Box>
