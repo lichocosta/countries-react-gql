@@ -1,3 +1,7 @@
+# ABOUT
+Se trata de un proyecto muy simple, un listado de países desarrollado con #ReactJS y el lenguaje de consulta para API, #GraphQL. Además utilicé #ChakraUI para dar estilos de manera rápida y funcional.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
